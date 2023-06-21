@@ -1,44 +1,117 @@
 import 'package:flutter/material.dart';
-class MyTheme  {
-static   Color lightPrimary=Color(0xFFB7935F);
-  static const Color darkPrimary=Color(0xFF141A2E);
-  static final ThemeData lightTheme=ThemeData(
-  scaffoldBackgroundColor: Colors.transparent,
-  appBarTheme: AppBarTheme(
-    iconTheme: IconThemeData(
-      color: Colors.black
-    ),
-    color: Colors.transparent,
-    centerTitle: true,
-    elevation: 0,
-    titleTextStyle:(
-  TextStyle(
-      color: Colors.black,
-      fontSize:30,
-      fontWeight:FontWeight.w500,
-  )
-  ),
-),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      showSelectedLabels: true,
-      showUnselectedLabels: false,
-      backgroundColor:MyTheme.lightPrimary,
+//import 'package:untitled2/hadeth/hadeth_data_class.dart';
+class MyTheme {
+  static const Color lightPrimary = Color(0xFFB7935F);
+  static const Color darkPrimary = Color(0xFF141A2E);
+  static const Color yellow = Color(0xFFFACC1D);
+  static final ThemeData lightTheme = ThemeData(
+      primaryColor: lightPrimary,
+     // accentColor: Colors.black,
+      scaffoldBackgroundColor:Colors.transparent,
+      appBarTheme:  AppBarTheme(
+      iconTheme: IconThemeData(
+          color: Colors.black),
+      color: Colors.transparent,
+     elevation: 0,
+     centerTitle: true,
+     titleTextStyle: TextStyle(
+     fontSize: 30,
+     fontWeight: FontWeight.w500,
+     color: Colors.black,),),
+     bottomNavigationBarTheme:  BottomNavigationBarThemeData(
+       elevation: 0.0,
+       showSelectedLabels: true,
+    showUnselectedLabels: false,
+    backgroundColor: lightPrimary,
     selectedIconTheme: IconThemeData(
-        color: Colors.black,
-        size: 38
-    ) ,
-      selectedLabelStyle:TextStyle(
-        color: Colors.black,
-      ) ,
-    unselectedIconTheme:IconThemeData(
-        color: Colors.white,
-        size: 26
-    ) ,
+      color: Colors.black,
+      size: 36,
     ),
- /* @override
-  Widget build(BuildContext context) {
-    return Scaffold();
+    selectedLabelStyle: TextStyle(
+        color: Colors.black),
+    selectedItemColor: Colors.black,
+    unselectedIconTheme: IconThemeData(
+      color: Colors.white,
+      size: 24,
+    ),
+  ),
+ textTheme: TextTheme(
+  headlineMedium: TextStyle(
+      fontSize: 30,
+      color:Colors.black ),
+  //),
+  bodyMedium: TextStyle(
+      fontSize: 25,
+      color: Colors.black),
+ // ),}
+  bodySmall: TextStyle(
+      fontSize: 20,
+      color: Colors.black),
+  ),
+      cardColor: Colors.white);
+
+  static final ThemeData darkTheme = ThemeData(
+  primaryColor: darkPrimary,
+  //accentColor: yellow,
+  scaffoldBackgroundColor: Colors.transparent,
+  appBarTheme: const AppBarTheme(
+  iconTheme: IconThemeData(
+      color: Colors.white),
+  color: Colors.transparent,
+  elevation: 0,
+  centerTitle: true,
+  titleTextStyle: TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.w500,
+  color: Colors.white,),
+
+ /* primaryColor: darkPrimary,
+  accentColor: yellow,
+  scaffoldBackgroundColor: Colors.transparent,
+  appBarTheme: const AppBarTheme(
+  iconTheme: IconThemeData(color: Colors.white),
+  color: Colors.transparent,
+  elevation: 0,
+  centerTitle: true,
+  titleTextStyle: TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.w500,
+  color: Colors.white,
+  ),*/
+  ),
+
+  bottomNavigationBarTheme:BottomNavigationBarThemeData(
+  showSelectedLabels: true,
+  showUnselectedLabels: false,
+  backgroundColor: lightPrimary,
+  selectedIconTheme: IconThemeData(
+  color: yellow,
+  size: 36,
+  ),
+  selectedLabelStyle: TextStyle(
+      color: yellow),
+  selectedItemColor: yellow,
+    unselectedIconTheme:IconThemeData(
+      color: Colors.white,
+  size: 24,
+  ),
+  ),
+  textTheme: TextTheme(
+  headlineMedium: TextStyle(
+  fontSize: 30,
+  color: Colors.white,
+  ),
+  bodyMedium: TextStyle(
+  fontSize: 25,
+  color: Colors.white,
+  ),
+  bodySmall: TextStyle(
+  fontSize: 20,
+  color: Colors.white,
+  ),
+  ),
+      cardColor: darkPrimary);
+ // ),
+ // );
+ // );
   }
-  */
-);
-}

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled2/quran/sura_details_screen.dart';
+import 'package:untitled2/home/quran/sura_details_screen.dart';
 import 'sura_details_screen_ars.dart';
 class SuraTitleWidget extends StatelessWidget {
 String title ;
