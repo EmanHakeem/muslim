@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'sura_details_screen_ars.dart';
 import 'verses_widget.dart';
+import 'package:provider/provider.dart';
+import 'package:untitled2/home/setting/setting_provider.dart';
+
 class SuraDetailsScreen extends StatefulWidget {
 static const String routeName="sura-details";
 
@@ -14,11 +17,14 @@ List<String>verses=[];
 
   @override
   Widget build(BuildContext context) {
-    SuraDetailsScreenArs args=(ModalRoute.of(context)?.settings.arguments)as SuraDetailsScreenArs ;
+    var settingProvider=Provider.of<SettingProvider>(context);
+    SuraDetailsScreenArs args=(
+        ModalRoute.of(context)?.settings.arguments)as SuraDetailsScreenArs ;
   if(verses.isEmpty)  readFile(args.index+1);
     return Container(
       decoration: BoxDecoration(
-      image: DecorationImage(image: AssetImage("assets/images/default_bg.png"),
+      image: DecorationImage(
+          image: AssetImage(settingProvider.getMainBackground()),
       fit: BoxFit.fill),
       ),
       child: Scaffold(
@@ -26,9 +32,11 @@ List<String>verses=[];
         appBar: AppBar(
           title: Text("Islami"),
         ),
-        body:verses.isEmpty? Center(child: CircularProgressIndicator(color:Color(0xFF141A2E),),)
+        body:verses.isEmpty?
+        Center(child: CircularProgressIndicator(color:Color(0xFF141A2E),),)
         :Card(margin: EdgeInsets.symmetric(horizontal: 30,vertical: 65),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+           shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25.0)),
           child: ListView.separated(
             itemBuilder: (context,index)=>VersesWidget(verses[index],index+1),
           separatorBuilder:(context,index)=>Padding(

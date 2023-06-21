@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:untitled2/quran/sura_title_widget.dart';
-import '../myTheme.dart';
+import 'package:untitled2/home/quran/sura_title_widget.dart';
+import 'package:untitled2/myTheme.dart';
+readFile() {}
 class QuranTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme =Theme.of(context);
     return Container(
-child: Column(
+      child: Column(
   children: [
-    Expanded(flex:2,child:
-    Image.asset("assets/images/qur2an_screen_logo.png"),),
+    Expanded(flex:2,
+      child: Image.asset("assets/images/qur2an_screen_logo.png"),),
     Divider(color: Color(0xFFB7935F),
-      thickness: 1.5,
+      thickness: 1.2,
     height: 5,),
   Text("اسم السورة",
   style: TextStyle(
@@ -19,11 +20,13 @@ child: Column(
   fontWeight: FontWeight.w500,),
   ) ,
     Divider(color: Color(0xFFB7935F),
-      thickness: 1.5,
+      thickness: 1.2,
     height: 5,),
     Expanded(flex:5,
     child:ListView.separated(
-      itemBuilder: (context,index)=>SuraTitleWidget(title: names[index],index: index,),
+      itemBuilder: (context,index)=>SuraTitleWidget(
+        title: names[index],
+        index: index,),
        /*   Row(
         children: [
           Text("${index+1}"),
@@ -31,10 +34,10 @@ child: Column(
         ],
       ),*/
         separatorBuilder:(context,index)=>Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80.0),
+          padding:  EdgeInsets.symmetric(horizontal: 80.0),
           child: Divider(
             color:Color(0xFFB7935F),
-            thickness: .5,),
+            thickness: 1.2,),
         ),
         itemCount: names.length,
     ),
